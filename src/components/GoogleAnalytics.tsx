@@ -153,7 +153,9 @@ export default function GoogleAnalytics() {
             // Google Ads conversion tracking helper
             // Delays navigation until gtag event is sent
             function gtagSendEvent(url) {
+              console.log('[Google Ads] Firing conversion event: ads_conversion_SUBMIT_LEAD_FORM_1');
               var callback = function () {
+                console.log('[Google Ads] Conversion event sent, navigating to:', url);
                 if (typeof url === 'string') {
                   window.location = url;
                 }

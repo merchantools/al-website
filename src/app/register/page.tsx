@@ -105,9 +105,11 @@ export default function RegisterPage() {
 
       if (typeof window !== 'undefined' && (window as any).gtagSendEvent) {
         // Use Google Ads conversion tracking with delayed navigation
+        console.log('[Conversion Tracking] Calling gtagSendEvent with URL:', thankYouUrl);
         (window as any).gtagSendEvent(thankYouUrl);
       } else {
         // Fallback to direct navigation if gtagSendEvent is not available
+        console.warn('[Conversion Tracking] gtagSendEvent not available, using direct navigation');
         router.push(thankYouUrl);
       }
 
