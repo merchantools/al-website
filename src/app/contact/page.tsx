@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import ToptalBadge from './ToptalBadge';
 
 // Configuration for Google Apps Script integration
 const FORM_CONFIG = {
@@ -98,6 +99,22 @@ export default function Contact() {
         {/* Get In Touch and Schedule Meeting Section */}
         <div className="max-w-7xl mx-auto mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Schedule a Meeting Section */}
+            <div>
+              <h2 className="text-2xl font-semibold mb-8 text-center">Schedule a Meeting</h2>
+              <div className="bg-white rounded-lg shadow-md p-8 h-full">
+                <div className="w-full h-[600px]">
+                  <iframe
+                      src="https://calendly.com/calvin-apilets/30min?month=2025-05"
+                      width="100%"
+                      height="100%"
+                      frameBorder="0"
+                      title="Schedule a meeting"
+                      className="rounded-lg"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
             {/* Get In Touch Section - Now with Form */}
             <div>
               <h2 className="text-2xl font-semibold mb-8 text-center">Get In Touch</h2>
@@ -271,22 +288,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Schedule a Meeting Section */}
-            <div>
-              <h2 className="text-2xl font-semibold mb-8 text-center">Schedule a Meeting</h2>
-              <div className="bg-white rounded-lg shadow-md p-8 h-full">
-                <div className="w-full h-[600px]">
-                  <iframe
-                    src="https://calendly.com/calvin-apilets/30min?month=2025-05"
-                    width="100%"
-                    height="100%"
-                    frameBorder="0"
-                    title="Schedule a meeting"
-                    className="rounded-lg"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
 
@@ -301,18 +303,19 @@ export default function Contact() {
               <p className="text-gray-600">Australia</p>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow bg-gray-400">
-              <h2 className="font-large text-lg mb-3 font-bold">Europe</h2>
-              <p className="text-gray-600">Drumderry, Barroe</p>
-              <p className="text-gray-600">Sligo, Co. Sligo</p>
-              <p className="text-gray-600">Ireland</p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow bg-gray-400">
               <h2 className="font-large text-lg mb-3 font-bold">India</h2>
               <p className="text-gray-600">2nd Floor</p>
               <p className="text-gray-600">Muttathottil Building</p>
               <p className="text-gray-600">Edappally, Kerala</p>
               <p className="text-gray-600">India</p>
             </div>
+            {/* Toptal Badge Section */}
+            <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow bg-gray-400">
+              <div className="max-w-7xl mx-auto mb-20 flex justify-center">
+                <ToptalBadge />
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
